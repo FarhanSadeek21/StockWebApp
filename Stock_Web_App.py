@@ -189,14 +189,14 @@ with open_close:
     open_close.add_trace(go.Line(x=data.Date, y=data.Open, mode='lines', 
     name='Open', marker_color='firebrick'))
     open_close.update_layout(title_text='Opening and closing price over time ', 
-    title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14, color='#7f7f7f'))
+    title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14))
     st.plotly_chart(open_close)
 
 with high_low:
     high_low = go.Figure()
     high_low.add_trace(go.Line(x=data.Date, y=data.High, mode='lines', name='High', marker_color='green'))
     high_low.add_trace(go.Line(x=data.Date, y=data.Low, mode='lines', name='Low', marker_color='#d62728'))
-    high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14, color='#7f7f7f'))
+    high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14))
     st.plotly_chart(high_low)
 
 with references:
@@ -388,7 +388,9 @@ with open_close:
     st.subheader(value + ' Stock Price')
     open_close = go.Figure()
     open_close.add_trace(go.Line(x=data.Date, y=data.Close, mode='lines', 
-    name='Close', marker_color='darkslateblue'))
+    name='Close', marker_
+    
+    ='darkslateblue'))
     open_close.add_trace(go.Line(x=data.Date, y=data.Open, mode='lines', 
     name='Open', marker_color='firebrick'))
     open_close.update_layout(title_text='Opening and closing price over time ', 
