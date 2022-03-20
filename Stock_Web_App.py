@@ -166,7 +166,7 @@ try:
         st.subheader('Data source: Yahoo Finance')
         st.write('Click in the button below to the check the source code in Github')
         col1, col2, col_3 = st.columns(3)
-        col2.button('Source code [link](https://github.com)')
+        col2.write('Source code [link](https://github.com)')
  
 except IndexError:
     st.error('Starting date must be before ending date')
