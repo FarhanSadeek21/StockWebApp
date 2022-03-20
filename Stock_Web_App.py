@@ -9,6 +9,7 @@ import plotly.graph_objects as go
 # containers
 intro = st.container()
 sidebar = st.container()
+datetime = st.container()
 header = st.container()
 data = st.container()
 open_close = st.container()
@@ -152,10 +153,10 @@ with sidebar:
     elif stock == 'NASDAQ':
         ticker = st.sidebar.selectbox('Select Stock', nasdaq)
 
-
-begin = st.sidebar.date_input('Starting Date', value=None)
-end = st.sidebar.date_input('Ending Date', value=None)
-if begin > end:
+with datetime:
+    begin = st.sidebar.date_input('Starting Date', value=None)
+    end = st.sidebar.date_input('Ending Date', value=None)
+    if begin > end:
         st.error('Begin Date must be before End Date')
         
         
