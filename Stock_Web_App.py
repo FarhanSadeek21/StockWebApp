@@ -413,3 +413,4 @@ with high_low:
 
     '''
     st.code(code)
+st.snow()
