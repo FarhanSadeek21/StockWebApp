@@ -143,7 +143,6 @@ dictonary = {
 }
 
 with intro:
-    st.snow()
     st.title('Stock Price App')
 
 # sidebar
@@ -202,6 +201,7 @@ with high_low:
 
 with references:
     st.header('Source Code')
+    st.bal
     code = '''
 # libraries
 # libraries
