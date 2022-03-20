@@ -201,6 +201,7 @@ with high_low:
 
 with references:
     st.header('Source Code')
+    st.snow()
     code = '''
 # libraries
 # libraries
@@ -413,4 +414,3 @@ with high_low:
 
     '''
     st.code(code)
-st.snow()
