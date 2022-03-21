@@ -23,13 +23,11 @@ source = st.container()
 
 
 # nasdaq stocks
-nasdaq = sorted(
-['AAPL', 'TWTR', 'MSFT', 'TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', 'INTC', 'CSCO', 'CMCSA', 'NVDA', 'AMD', 'ADBE', 'ADP', 'ADSK', 'AKAM', 'ADI','QCOM','AMGN'])
+nasdaq = sorted(['AAPL', 'TWTR', 'MSFT', 'TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', 'INTC', 'CSCO', 'CMCSA', 'NVDA', 'AMD', 'ADBE', 'ADP', 'ADSK', 'AKAM', 'ADI','QCOM','AMGN'])
 
 
 # nyse stocks
-nyse = sorted(
-['GME', 'HD', 'WMT', 'JPM', 'BAC', 'C', 'WFC', 'PFE', 'T', 'MA', 'UNH', 'KO', 'VZ', 'DIS', 'PG', 'MCD', 'MRK', 'PEP', 'MGM', 'BA', 'CAT', 'DD', 'JNJ', 'MMM', 'AXP', 'XOM', 'PNC', 'XOM', 'CME', 'TMO', 'COP', 'CVS',  'ORCL', 'PLTR', 'NKE', 'NOC'])
+nyse = sorted(['GME', 'HD', 'WMT', 'JPM', 'BAC', 'C', 'WFC', 'PFE', 'T', 'MA', 'UNH', 'KO', 'VZ', 'DIS', 'PG', 'MCD', 'MRK', 'PEP', 'MGM', 'BA', 'CAT', 'DD', 'JNJ', 'MMM', 'AXP', 'XOM', 'PNC', 'XOM', 'CME', 'TMO', 'COP', 'CVS',  'ORCL', 'PLTR', 'NKE', 'NOC'])
 
 
 # companies and tickers
@@ -46,9 +44,9 @@ try:
     with sidebar:
         stock = st.sidebar.selectbox('Select Stock', ['NYSE', 'NASDAQ'])
         if stock == 'NYSE':
-            ticker = st.sidebar.selectbox('Select Stock', nyse)
+            ticker = st.sidebar.selectbox('Select Ticker', nyse)
         elif stock == 'NASDAQ':
-            ticker = st.sidebar.selectbox('Select Stock', nasdaq)
+            ticker = st.sidebar.selectbox('Select Ticker', nasdaq)
 
     # datetime
 
