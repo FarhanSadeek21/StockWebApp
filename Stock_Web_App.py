@@ -86,14 +86,14 @@ try:
         open_close.add_trace(go.Line(x=data.Date, y=data.Close, mode='lines', name='Close', marker_color='darkslateblue'))
         open_close.add_trace(go.Line(x=data.Date, y=data.Open, mode='lines', name='Open', marker_color='firebrick'))
         open_close.update_layout(title_text='Opening and closing price over time ',
-        title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(size=14))
+        title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True)
         st.plotly_chart(open_close)
 
     # high low graph
 
     with high_low:
         high_low = go.Figure()
-        high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(size=14))
+        high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True)
         high_low.add_trace(go.Scatter(x=data.Date, y=data.High, fill=None, mode='lines', name='High', line_color='green'))
         high_low.add_trace(go.Scatter(x=data.Date, y=data.Low, fill='tonexty', mode='lines', name='Low', line_color='#d62228'))
         st.plotly_chart(high_low)
@@ -104,7 +104,7 @@ try:
         st.subheader('Volume')
         volume = go.Figure()
         volume.add_trace(go.Line(x=data.Date, y=data.Volume, fill='tonexty', marker_color='#1f77b4'))
-        volume.update_layout(title_text='Volume over time', title_x=0.5, xaxis_title='Date', yaxis_title='Volume', xaxis_rangeslider_visible=True, font=dict(size=14))
+        volume.update_layout(title_text='Volume over time', title_x=0.5, xaxis_title='Date', yaxis_title='Volume', xaxis_rangeslider_visible=True)
         st.plotly_chart(volume)
         volume = round(data.tail(1)['Volume'].values[0], 2)
         volume_change = str(round(data.tail(1)['Volume'].values[0] - data.head(1)['Volume'].values[0], 2))
