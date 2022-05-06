@@ -27,7 +27,7 @@ nasdaq = sorted(['AAPL', 'TWTR', 'MSFT', 'TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', '
 
 
 # nyse stocks
-nyse = sorted(['FDX', 'GME', 'HD', 'WMT', 'JPM', 'BAC', 'C', 'WFC', 'PFE', 'T', 'MA', 'UNH', 'KO', 'VZ', 'DIS', 'PG', 'MCD', 'MRK', 'PEP', 'MGM', 'BA', 'CAT', 'DD', 'JNJ', 'MMM', 'AXP', 'XOM', 'PNC', 'XOM', 'CME', 'TMO', 'COP', 'CVS',  'ORCL', 'PLTR', 'NKE', 'NOC'])
+nyse = sorted(['FDX', 'GME', 'HD', 'WMT', 'JPM', 'BAC', 'C', 'WFC', 'PFE', 'T', 'MA', 'UNH', 'KO', 'VZ', 'DIS', 'PG', 'MCD', 'MRK', 'PEP', 'MGM', 'BA', 'CAT', 'DD', 'JNJ', 'MMM', 'AXP', 'PNC', 'CME', 'TMO', 'COP', 'CVS',  'ORCL', 'PLTR', 'NKE', 'NOC'])
 
 
 # companies and tickers
