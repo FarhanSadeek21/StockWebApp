@@ -88,7 +88,7 @@ try:
         open_close.add_trace(go.Line(x=data.Date, y=data.Close, mode='lines', name='Close', marker_color='darkslateblue'))
         open_close.add_trace(go.Line(x=data.Date, y=data.Open, mode='lines', name='Open', marker_color='firebrick'))
         open_close.update_layout(title_text='Opening and closing price over time ',
-        title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=12))
+        title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14))
         st.plotly_chart(open_close)
 
     # high low graph
