@@ -87,26 +87,23 @@ try:
         open_close = go.Figure()
         open_close.add_trace(go.Line(x=data.Date, y=data.Close, mode='lines', name='Close', marker_color='darkslateblue'))
         open_close.add_trace(go.Line(x=data.Date, y=data.Open, mode='lines', name='Open', marker_color='firebrick'))
-        open_close.update_layout(title_text='Opening and closing price over time ',
-        title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=16))
+        open_close.update_layout(title_text='Opening and closing price over time ', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=13))
         st.plotly_chart(open_close)
 
     # high low graph
-
     with high_low:
         high_low = go.Figure()
-        high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=12))
+        high_low.update_layout(title_text='Highest and lowest price over time', title_x=0.5, xaxis_title='Date', yaxis_title='Price', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=13))
         high_low.add_trace(go.Scatter(x=data.Date, y=data.High, fill=None, mode='lines', name='High', line_color='green'))
         high_low.add_trace(go.Scatter(x=data.Date, y=data.Low, fill='tonexty', mode='lines', name='Low', line_color='#d62228'))
         st.plotly_chart(high_low)
 
     # volume
-
     with volume:
         st.subheader('Volume')
         volume = go.Figure()
         volume.add_trace(go.Line(x=data.Date, y=data.Volume, fill='tonexty', marker_color='#1f77b4'))
-        volume.update_layout(title_text='Volume over time', title_x=0.5, xaxis_title='Date', yaxis_title='Volume', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=12))
+        volume.update_layout(title_text='Volume over time', title_x=0.5, xaxis_title='Date', yaxis_title='Volume', xaxis_rangeslider_visible=True, font=dict(family='Roboto Mono, monospace', size=14))
         st.plotly_chart(volume)
         volume = round(data.tail(1)['Volume'].values[0], 2)
         volume_change = str(round(data.tail(1)['Volume'].values[0] - data.head(1)['Volume'].values[0], 2))
@@ -116,7 +113,6 @@ try:
         st.title('')
 
     # change
-
     with change:
         st.subheader('Current Price')
 
@@ -190,16 +186,130 @@ source = st.container()
 
 # nasdaq stocks
 nasdaq = sorted(
-['AAPL', 'TWTR', 'MSFT', 'TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', 'INTC', 'CSCO', 'CMCSA', 'NVDA', 'AMD', 'ADBE', 'ADP', 'ADSK', 'AKAM', 'ADI','QCOM','AMGN'])
+['AAPL', 
+'TWTR', 
+'MSFT', 
+'TSLA', 
+'AMZN', 
+'GOOG', 
+'FB', 
+'NFLX', 
+'INTC', 
+'CSCO', 
+'CMCSA', 
+'NVDA', 
+'AMD', 
+'ADBE', 
+'ADP', 
+'ADSK', 
+'AKAM', 
+'ADI',
+'QCOM',
+'AMGN'])
 
 
 # nyse stocks
 nyse = sorted(
-['HD', 'WMT', 'JPM', 'BAC', 'C', 'WFC', 'PFE', 'T', 'MA', 'UNH', 'KO', 'VZ', 'DIS', 'PG', 'MCD', 'MRK', 'PEP', 'MGM', 'BA', 'CAT', 'DD', 'JNJ', 'MMM', 'AXP', 'XOM', 'PNC', 'XOM', 'CME', 'TMO', 'COP', 'CVS',  'ORCL', 'PLTR', 'NKE', 'NOC'])
+[
+    'HD', 
+    'WMT', 
+    'JPM', 
+    'BAC', 
+    'C', 
+    'WFC', 
+    'PFE', 
+    'T', 
+    'MA', 
+    'UNH', 
+    'KO', 
+    'VZ', 
+    'DIS', 
+    'PG', 
+    'MCD', 
+    'MRK', 
+    'PEP', 
+    'MGM', 
+    'BA', 
+    'CAT', 
+    'DD', 
+    'JNJ', 
+    'MMM', 
+    'AXP', 
+    'XOM', 
+    'PNC', 
+    'XOM', 
+    'CME', 
+    'TMO', 
+    'COP', 
+    'CVS',  
+    'ORCL', 
+    'PLTR', 
+    'NKE', 
+    'NOC'
+])
 
 
 # companies and tickers
-dictonary = {'AAPL': 'Apple', 'MSFT': 'Microsoft', 'TSLA': 'Tesla', 'AMZN': 'Amazon', 'GOOG': 'Google', 'FB': 'Meta', 'HD': 'Home Depot', 'NFLX': 'Netflix', 'TWTR': 'Twitter', 'WMT': 'Walmart', 'JPM': 'JP Morgan', 'BAC': 'Bank of America', 'C': 'Citigroup', 'WFC': 'Wells Fargo', 'PFE': 'Pfizer','T': 'AT&T', 'INTC': 'Intel Corp', 'CSCO': 'Cisco', 'V'  : 'Visa', 'MA' : 'Mastercard', 'UNH': 'UnitedHealth', 'KO' : 'Coca-Cola', 'VZ' : 'Verizon', 'DIS': 'Disney', 'PG' : 'Procter & Gamble', 'MCD': 'McDonalds', 'MRK': 'Merck', 'PEP': 'PepsiCo, Inc.', 'MGM': 'MGM Resorts International', 'BA' : 'Boeing', 'CAT': 'Caterpillar', 'DD' : 'DuPont', 'JNJ': 'Johnson & Johnson', 'MMM': '3M', 'AXP': 'American Express', 'PNC': 'PNC', 'UNP': 'Union Pacific', 'CVS': 'CVS Health Corp', 'CMCSA': 'Comcast', 'COP': 'ConocoPhillips', 'TMO': 'T-Mobile', 'CME': 'Chicago Mercantile Exchange', 'XOM':'Exxon Mobil Corp', 'ORCL': 'Oracle Corp', 'NVDA': 'Nvidia', 'AMD': 'Advanced Micro Devices', 'ADBE': 'Adobe Systems Inc', 'ADP': 'Automatic data Processing', 'PLTR': 'Paylocity', 'AMAT': 'Applied Materials', 'ADSK': 'Autodesk', 'AKAM': 'Akamai Technologies', 'QCOM': 'Qualcomm', 'NKE': 'Nike', 'AMGN': 'Amgen', 'ADI': 'Analog Devices', 'NOC': 'Northrop Grumman' }
+dictonary = {
+
+    'AAPL': 'Apple', 
+    'MSFT': 'Microsoft', 
+    'TSLA': 'Tesla', 
+    'AMZN': 'Amazon', 
+    'GOOG': 'Google', 
+    'FB': 'Meta', 
+    'HD': 'Home Depot', 
+    'NFLX': 'Netflix', 
+    'TWTR': 'Twitter', 
+    'WMT': 'Walmart', 
+    'JPM': 'JP Morgan', 
+    'BAC': 'Bank of America', 
+    'C': 'Citigroup', 
+    'WFC': 'Wells Fargo', 
+    'PFE': 'Pfizer',
+    'T': 'AT&T', 
+    'INTC': 'Intel Corp', 
+    'CSCO': 'Cisco', 
+    'V'  : 'Visa', 
+    'MA' : 'Mastercard', 
+    'UNH': 'UnitedHealth', 
+    'KO' : 'Coca-Cola', 
+    'VZ' : 'Verizon', 
+    'DIS': 'Disney', 
+    'PG' : 'Procter & Gamble', 
+    'MCD': 'McDonalds', 
+    'MRK': 'Merck', 
+    'PEP': 'PepsiCo, Inc.', 
+    'MGM': 'MGM Resorts International', 
+    'BA' : 'Boeing', 
+    'CAT': 'Caterpillar', 
+    'DD' : 'DuPont', 
+    'JNJ': 'Johnson & Johnson', 
+    'MMM': '3M', 
+    'AXP': 'American Express', 
+    'PNC': 'PNC', 
+    'UNP': 'Union Pacific', 
+    'CVS': 'CVS Health Corp', 
+    'CMCSA': 'Comcast', 
+    'COP': 'ConocoPhillips', 
+    'TMO': 'T-Mobile', 
+    'CME': 'Chicago Mercantile Exchange', 
+    'XOM':'Exxon Mobil Corp', 
+    'ORCL': 'Oracle Corp', 
+    'NVDA': 'Nvidia', 
+    'AMD': 'Advanced Micro Devices', 
+    'ADBE': 'Adobe Systems Inc', 
+    'ADP': 'Automatic data Processing', 
+    'PLTR': 'Paylocity', 
+    'AMAT': 'Applied Materials', 
+    'ADSK': 'Autodesk', 
+    'AKAM': 'Akamai Technologies', 
+    'QCOM': 'Qualcomm', 
+    'NKE': 'Nike', 
+    'AMGN': 'Amgen', 
+    'ADI': 'Analog Devices', 
+    'NOC': 'Northrop Grumman' 
+}
 
 
 try:
