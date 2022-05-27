@@ -44,7 +44,7 @@ try:
 
     # sidebar
     with sidebar:
-        stock = st.sidebar.selectbox('Select Stock', ['NYSE', 'NASDAQ'])
+        stock = st.sidebar.selectbox('Select Market', ['NYSE', 'NASDAQ'])
         if stock == 'NYSE':
             ticker = st.sidebar.selectbox('Select Stock', nyse)
         elif stock == 'NASDAQ':
@@ -320,7 +320,7 @@ try:
 
     # sidebar
     with sidebar:
-        stock = st.sidebar.selectbox('Select Stock', ['NYSE', 'NASDAQ'])
+        stock = st.sidebar.selectbox('Select Market', ['NYSE', 'NASDAQ'])
         if stock == 'NYSE':
             ticker = st.sidebar.selectbox('Select Stock', nyse)
         elif stock == 'NASDAQ':
