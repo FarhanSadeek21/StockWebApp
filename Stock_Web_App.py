@@ -24,7 +24,7 @@ source = st.container()
 
 # nasdaq stocks
 nasdaq = sorted(
-['AAPL', 'TWTR', 'MSFT', 'TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', 'INTC', 'CSCO', 'CMCSA', 'NVDA', 'AMD', 'ADBE', 'ADP', 'ADSK', 'AKAM', 'ADI','QCOM','AMGN'])
+['AAPL', 'TWTR', 'MSFT', 'COIN','TSLA', 'AMZN', 'GOOG', 'FB', 'NFLX', 'INTC', 'CSCO', 'CMCSA', 'NVDA', 'AMD', 'ADBE', 'ADP', 'ADSK', 'AKAM', 'ADI','QCOM','AMGN'])
 
 
 # nyse stocks
